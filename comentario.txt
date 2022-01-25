@@ -1,0 +1,54 @@
+yarn init -y 
+
+yarn add react react-dom
+
+/**
+* Babel: Converter (transpilar) o codigo react para um que o browser entenda
+*
+* webpack: para cada tipo de arquivo, será convertido do codigo de maneira diferente
+  Loaders: Babel-loader; css-loader; etc.
+*
+*/
+yarn add @babel/core @babel/preset-env @babel/preset-react webpack webpack-cli
+
+yarn add @babel/cli    //agora vai ser passado o nome do arquivo
+  yarn babel src/index.js --out-file public/bundle.js   //converte o arquivo e manda pra essa pasta que sera criada
+  foi convertido em um arquivo em formato JS antigo, que os browser entenda
+
+configurando o webpack:
+  yarn add babel-loader
+
+yarn webpack --mode development
+
+yarn add webpack-dev-server -D   //monitorando as mudanças do codigo
+    depois configuro no webpack.config.js  o devServer no nivel mais alto da aplicação 
+
+configurado o devServer no webpack.config.js rodo
+  yarn webpack-dev-server --mode development         ---então agora fica com o terminal rodadnod
+
+
+adicionando css
+yarn add style-loader css-loader
+
+no package.json
+  "scripts": {
+      "dev": "webpack-dev-server --mode development",
+      "bild": "webpack --mode production"
+    },
+
+yarn add file-loader
+
+acessar o back end feito com o node, e inicia-lo
+criar projetos no insominia ---- 
+
+
+yarn add axios     //acesso ao backend   - api no caso
+
+erro de CORS no navegador -----
+entra na pasta backend e la dentro sera instalado um modo chamado CORS
+yarn add cors
+
+
+
+para o babel aceitar await temos que adicionar um pluguim
+yarn add @babel/plugin-transform-runtime -D
